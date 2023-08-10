@@ -1,0 +1,70 @@
+{% extends "motherapp/mlayout.html" %}
+{% block content %}
+
+<body>
+    <div class="wrapper">
+        <div id="content">
+
+            <!-- main-heading -->
+            <h2 class="main-title-w3layouts mb-2 text-center">Doctors</h2>
+            <!--// main-heading -->
+
+            <!-- Grids Content -->
+            <section class="grids-section bd-content">
+
+                <!-- Grids Info -->
+                <div class="outer-w3-agile mt-3">
+                    <h4 class="tittle-w3-agileits mb-4">Active Doctors</h4>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th class="text-center">
+                                    No.
+                                </th>
+                                <th class="text-center">
+                                    Doctor's Name
+                                </th>
+                                <th class="text-center">
+                                    Licence Number
+                                </th>
+                                <th class="text-center">
+                                    Email
+                                </th>
+                                <th class="text-center">
+                                    Phone
+                                </th>
+                                <th class="text-center">
+                                    Address
+                                </th>
+                                <th class="text-center">
+                                    Working Hospital
+                                </th>
+                                <th class="text-center">
+                                    Message
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in data %}
+                            <tr>
+                                <td>{{i.id}}</td>
+                                <td>{{i.name}}</td>
+                                <td>{{i.licence_number}}</td>
+                                <td>{{i.email}}</td>
+                                <td>{{i.number}}</td>
+                                <td>{{i.address}}</td>
+                                <td>{{i.hospital}}</td>
+                                <td><a href="{% url 'msgd' id=i.id%}">Send A Message</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>   
+        </div>
+    </div>
+
+</body>
+
+{% endblock %}

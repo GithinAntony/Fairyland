@@ -1,0 +1,34 @@
+{% extends "publicapp/playout.html" %}
+{% block content %}
+<div class="inner-banner-w3ls py-5" id="home">
+    <div class="container py-xl-5 py-lg-3">
+        <!-- login  -->
+        <div class="modal-body my-5 pt-4">
+            <h3 class="title-w3 mb-5 text-center text-wh font-weight-bold">Login Now</h3>
+            <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+                <div class="form-group">
+                    <label class="col-form-label">Username</label>
+                    <input type="text" class="form-control" placeholder="your name" name="r1" required="">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Password</label>
+                    <input type="password" class="form-control" placeholder="*****" name="r2" required="">
+                </div>
+                <button type="submit" class="btn button-style-w3">Login</button>
+                <p class="text-center dont-do text-style-w3ls text-li">Don't have an account?
+                    <a href="{% url 'register' %}" class="font-weight-bold text-li">
+                        Register Now</a>
+                </p>
+
+                {% if msg %}
+                <script>
+                    alert('{{msg}}');
+                </script>
+                {% endif %}  
+
+            </form>
+        </div>
+        <!-- //login -->
+    </div>
+</div>
+{% endblock %}

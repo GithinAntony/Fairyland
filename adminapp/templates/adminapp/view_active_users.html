@@ -1,0 +1,51 @@
+{% extends "adminapp/alayout.html" %}
+{% block content %}
+
+<body>
+    <div class="wrapper">
+        <div id="content">
+
+            <!-- main-heading -->
+            <h2 class="main-title-w3layouts mb-2 text-center">Mothers</h2>
+            <!--// main-heading -->
+
+            <!-- Grids Content -->
+            <section class="grids-section bd-content">
+
+                <!-- Grids Info -->
+                <div class="outer-w3-agile mt-3">
+                    <h4 class="tittle-w3-agileits mb-4">Active Mothers</h4>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                
+                                <th class="text-center">
+                                    Username
+                                </th>
+                                <th class="text-center">
+                                    Password
+                                </th>
+                                <th class="text-center">
+                                    Block
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in data %}
+                            <tr>
+                                <td>{{i.username}}</td>
+                                <td>{{i.password}}</td>
+                                <td><a href="{% url 'delete' id=i.id%}">Block Now</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>   
+        </div>
+    </div>
+
+</body>
+
+{% endblock %}

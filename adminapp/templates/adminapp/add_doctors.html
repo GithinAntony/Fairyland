@@ -1,0 +1,105 @@
+<html lang="en"><head>
+    <title>Fairyland :: Babycare</title>
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Modernize Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta Tags -->
+
+    <!-- Style-sheets -->
+    <!-- Bootstrap Css -->
+    <link href="../static/adminapp/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <!-- Bootstrap Css -->
+    <!-- Common Css -->
+    <link href="../static/adminapp/css/style.css" rel="stylesheet" type="text/css" media="all">
+    <!--// Common Css -->
+    <!-- Fontawesome Css -->
+    <link href="../static/adminapp/css/fontawesome-all.css" rel="stylesheet">
+    <!--// Fontawesome Css -->
+    <!--// Style-sheets -->
+
+    <!--web-fonts-->
+    <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!--//web-fonts-->
+</head>
+
+<body>
+    <div class="bg-page py-5">
+        <div class="container">
+            <!-- main-heading -->
+            <h2 class="main-title-w3layouts mb-2 text-center text-white">Add Doctor</h2>
+            <!--// main-heading -->
+            <div class="form-body-w3-agile text-center w-lg-50 w-sm-75 w-100 mx-auto mt-5">
+                <form action="{% url 'add_doctors' %}" method="POST">{% csrf_token %}
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" placeholder="Enter name" name="r1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Licence Number</label>
+                        <input type="number" class="form-control" placeholder="Enter licence number" name="r2" required>
+                    </div>                    
+                    <div class="form-group">
+                        <label>Email ID</label>
+                        <input type="email" class="form-control" placeholder="Enter email" name="r3" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="number" class="form-control" placeholder="Enter phone number" name="r4" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" class="form-control" placeholder="Enter address" name="r5" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Working Hospital</label>
+                        <input type="text" class="form-control" placeholder="Enter hospital name" name="r6" required>
+                    </div>                    
+                    <button type="submit" class="btn btn-primary error-w3l-btn mt-sm-5 mt-3 px-4">Submit</button>
+
+                    {% if msg %}
+                    <script>
+                        alert('{{msg}}');
+                    </script>
+                    {% endif %}
+
+                </form>
+
+                <h1 class="paragraph-agileits-w3layouts mt-2">
+                    <a href="{% url 'view_doctors' %}">Back...</a>
+                </h1>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright-w3layouts py-xl-3 py-2 mt-xl-5 mt-4 text-center">
+                <p>© 2020 Fairyland :: Babycare. All Rights Reserved | Design by
+                    <a href="{% url 'home' %}"> Fairyland </a>
+                </p>
+            </div>
+            <!--// Copyright -->
+        </div>
+    </div>
+
+
+    <!-- Required common Js -->
+    <script src="../static/adminapp/js/jquery-2.2.3.min.js"></script>
+    <!-- //Required common Js -->
+
+    <!-- Js for bootstrap working-->
+    <script src="../static/adminapp/js/bootstrap.min.js"></script>
+    <!-- //Js for bootstrap working -->
+
+
+
+</body></html>

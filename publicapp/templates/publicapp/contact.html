@@ -1,0 +1,44 @@
+{% extends "publicapp/playout.html" %}
+{% block content %}
+
+<section class="contact py-5" id="contact">
+    <div class="container py-xl-5 py-lg-3" style="height: 75%">
+        <h3 class="title-w3 mb-sm-5 mb-4 text-center text-wh font-weight-bold">Contact Us</h3>
+        <br><br><br><br>
+        <div class="contact_grid_right pt-4">
+            <form action="{% url 'contact' %}" method="POST">{% csrf_token %}
+                <div class="row contact_left_grid">
+                    <div class="col-lg-6 con-left" data-aos="fade-up">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="r1" placeholder="Name" required>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group">
+                            <input class="form-control" type="email" name="r2" placeholder="Email" required>
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="col-lg-6 con-right" data-aos="fade-up">
+                        <div class="form-group" >
+                            <textarea style="height: 45%" id="textarea" placeholder="Your message here..." name="r3" required></textarea>
+                        </div>
+                        <div class="sub-honey">
+                            <button class="form-control btn" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+                {% if msg %}
+                <script>
+                    alert('{{msg}}');
+                </script>
+                {% endif %}
+
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

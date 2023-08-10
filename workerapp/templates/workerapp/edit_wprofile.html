@@ -1,0 +1,47 @@
+{% extends "workerapp/wlayout.html" %}
+{% block content %}
+
+<form  action="{% url 'edit_wprofile' %}" method="POST">{% csrf_token %}
+
+    <!-- inner banner -->
+    <div class="inner-banner-w3ls py-5" id="home">
+        <div class="container py-xl-5 py-lg-3">
+            <!-- register  -->
+            <div class="modal-body mt-md-2 mt-5">
+                <h3 class="title-w3 mb-5 text-center text-wh font-weight-bold">Manage Your Profile Here</h3>
+                    <div class="form-group">
+                        <label class="col-form-label">Name</label>
+                        <input type="text" name="r1" value="{{data.name}}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Worker ID Number</label>
+                        <input type="number" class="form-control" name="r2" value="{{data.worker_id_number}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Email ID</label>
+                        <input type="email" class="form-control" name="r3" value="{{data.email}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Phone Number</label>
+                        <input type="number" class="form-control" name="r4" value="{{data.number}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Address</label>
+                        <input type="text" class="form-control" name="r5" value="{{data.address}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Working Area</label>
+                        <input type="text" class="form-control" name="r6" value="{{data.place}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Password</label>
+                        <input type="text" class="form-control" name="r7" value="{{item.password}}">
+                    </div>
+                    <button type="submit" class="btn button-style-w3">UPDATE</button>
+            </div>
+            <!-- //register -->
+        </div>
+    </div>
+    <!-- //inner banner -->
+
+{% endblock %}

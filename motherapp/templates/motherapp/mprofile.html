@@ -1,0 +1,27 @@
+{% extends "motherapp/mlayout.html" %}
+{% block content %}
+
+<br><br>
+<form style="position: relative;left: 30%">
+    <div class="row w3pvtits-services-row text-center">
+        <div class="col-lg-4 serv-w3mk mt-5">
+            <div class="w3pvtits-services-grids">
+                <span class="fa fa-users ser-icon" aria-hidden="true"></span>
+                <h4 class="text-bl my-4">Welcome {{prof.mother_name}}({{prof.mother_bloodgroup}}),{{prof.mother_age}}</h4>
+                <p >Email ID : {{prof.email}}</p>
+                <p >Phone Number : {{prof.number}}</p>
+                <p >Nearest Anganvadi : {{prof.anganvadi}}</p>
+                <p >Place : {{prof.place}}</p>
+                <br>
+                Baby's Details
+                <p >Baby's Name : {{prof.baby_name}}</p>
+                <p >Baby's Blood Group : {{prof.baby_bloodgroup}}</p>
+                <p >Baby's Age : {{prof.baby_age}}</p>
+                <a class="service-btn mt-xl-5 mt-4 btn" href="{% url 'edit_mprofile' %}">EDIT<span class="fa fa-long-arrow-right ml-2"></span></a>
+            </div>
+        </div>
+    </div>
+</form>
+<br><br><br><br>
+
+{% endblock %}

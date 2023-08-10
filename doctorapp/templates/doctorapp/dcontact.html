@@ -1,0 +1,46 @@
+{% extends "doctorapp/dlayout.html" %}
+{% block content %}
+
+<br>
+<section class="contact py-5" id="contact">
+    <div class="container py-xl-5 py-lg-3" style="height: 75%">
+        <h3 class="title-w3 mb-sm-5 mb-4 text-center text-wh font-weight-bold">Contact Us</h3>
+        <br><br>
+        <div class="contact_grid_right pt-4">
+            <form action="{% url 'dcontact' %}" method="POST">{% csrf_token %}
+                <div class="row contact_left_grid">
+                    <div class="col-lg-6 con-left" data-aos="fade-up">
+                        <div class="form-group">
+                            <input class="form-control" value="{{prof.name}}" type="text"  placeholder="Name" readonly>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group">
+                            <input class="form-control" value="{{prof.email}}" type="email" placeholder="Email" readonly>
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="col-lg-6 con-right" data-aos="fade-up">
+                        <div class="form-group" >
+                            <textarea style="height: 45%" id="textarea" placeholder="Your message here..." name="r3" required></textarea>
+                        </div>
+                        <div class="sub-honey">
+                            <button class="form-control btn" type="submit">Submit</button>
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+
+                {% if msg %}
+                <script>
+                    alert('{{msg}}');
+                </script>
+                {% endif %}  
+                              
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

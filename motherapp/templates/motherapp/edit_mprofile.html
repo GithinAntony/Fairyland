@@ -1,0 +1,62 @@
+{% extends "motherapp/mlayout.html" %}
+{% block content %}
+
+<form  action="{% url 'edit_mprofile' %}" method="POST">{% csrf_token %}
+
+    <!-- inner banner -->
+    <div class="inner-banner-w3ls py-5" id="home">
+        <div class="container py-xl-5 py-lg-3">
+            <!-- register  -->
+            <div class="modal-body mt-md-2 mt-5">
+                <h3 class="title-w3 mb-5 text-center text-wh font-weight-bold">Manage Your Profile Here</h3>
+                    <div class="form-group">
+                        <label class="col-form-label">Mother's Name</label>
+                        <input type="text" name="r1" value="{{data.mother_name}}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Mother's Age</label>
+                        <input type="number" class="form-control" name="r2" value="{{data.mother_age}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Mother's Blood Group</label>
+                        <input type="text" class="form-control" name="r3" value="{{data.mother_bloodgroup}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Baby's Name</label>
+                        <input type="text" class="form-control" name="r4" value="{{data.baby_name}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Baby's Age</label>
+                        <input type="number" class="form-control" name="r5" value="{{data.baby_age}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Baby's Blood Group</label>
+                        <input type="text" class="form-control" name="r6" value="{{data.baby_bloodgroup}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Email ID</label>
+                        <input type="email" class="form-control" name="r7" value="{{data.email}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Phone Number</label>
+                        <input type="number" class="form-control" name="r8" value="{{data.number}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Nearest Anganvadi</label>
+                        <input type="text" class="form-control" name="r9" value="{{data.anganvadi}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Place</label>
+                        <input type="text" class="form-control" name="r10" value="{{data.place}}">
+                    </div>                    <div class="form-group">
+                        <label class="col-form-label">Password</label>
+                        <input type="text" class="form-control" name="r11" value="{{item.password}}">
+                    </div>
+                    <button type="submit" class="btn button-style-w3">UPDATE</button>
+            </div>
+            <!-- //register -->
+        </div>
+    </div>
+    <!-- //inner banner -->
+
+{% endblock %}

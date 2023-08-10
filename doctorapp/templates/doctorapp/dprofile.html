@@ -1,0 +1,27 @@
+{% extends "doctorapp/dlayout.html" %}
+{% block content %}
+
+<br><br><br><br>
+<form style="position: relative;left: 30%">
+    <div class="row w3pvtits-services-row text-center">
+        <div class="col-lg-4 serv-w3mk mt-5">
+            <div class="w3pvtits-services-grids">
+                <span class="fa fa-users ser-icon" aria-hidden="true"></span>
+                <h4 class="text-bl my-4">Welcome {{prof.name}}</h4>
+                <p >{{prof.email}}</p>
+                <br>
+                <p >{{prof.number}}</p>
+                <br>
+                <p >{{prof.address}}</p>
+                <br>
+                <p >{{prof.licence_number}}</p>
+                <br>
+                <p >{{prof.hospital}}</p>
+                <a class="service-btn mt-xl-5 mt-4 btn" href="{% url 'edit_dprofile' %}">EDIT<span class="fa fa-long-arrow-right ml-2"></span></a>
+            </div>
+        </div>
+    </div>
+</form>
+<br><br><br><br>
+
+{% endblock %}

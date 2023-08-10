@@ -1,0 +1,76 @@
+{% extends "adminapp/alayout.html" %}
+{% block content %}
+
+<body>
+    <div class="wrapper">
+        <div id="content">
+
+            <!-- main-heading -->
+            <h2 class="main-title-w3layouts mb-2 text-center">Mothers</h2>
+            <!--// main-heading -->
+
+            <!-- Grids Content -->
+            <section class="grids-section bd-content">
+
+                <!-- Grids Info -->
+                <div class="outer-w3-agile mt-3">
+                    <h4 class="tittle-w3-agileits mb-4">Registered Mothers</h4>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                
+                                <th class="text-center">
+                                    Mother's Name
+                                </th>
+                                <th class="text-center">
+                                    Mother's Blood Group
+                                </th>
+                                <th class="text-center">
+                                    Mother's Age
+                                </th>
+                                <th class="text-center">
+                                    Baby's Name
+                                </th>
+                                <th class="text-center">
+                                    Baby's Blood Group
+                                </th>
+                                <th class="text-center">
+                                    Baby's Age
+                                </th>
+                                <th class="text-center">
+                                    Nearest Anganvadi
+                                </th>
+                                <th class="text-center">
+                                    Place
+                                </th>
+
+                                <th class="text-center">
+                                    Atharisation
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in data %}
+                            <tr>
+                                <td>{{i.mother_name}}</td>
+                                <td>{{i.mother_bloodgroup}}</td>
+                                <td>{{i.mother_age}}</td>
+                                <td>{{i.baby_name}}</td>
+                                <td>{{i.baby_bloodgroup}}</td>
+                                <td>{{i.baby_age}}</td>
+                                <td>{{i.anganvadi}}</td>
+                                <td>{{i.place}}</td>
+                                <td><a href="{% url 'approve' i.id %}">{{i.approve}}</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>   
+        </div>
+    </div>
+
+</body>
+
+{% endblock %}
